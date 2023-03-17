@@ -203,9 +203,7 @@ This contract introduces 2 functions to perform single hop swaps on Uniswap V3
 
 ## Uniswap V3 Multi Hop Swap
 
-Sell DAI and buy CRV.
-
-However there is no DAI - CRV pool, so we will execute multi hop swaps, DAI to WETH and then WETH to CRV.
+Swap WETH for USDC and then USDC for DAI.
 
 ### State variables
 
@@ -214,22 +212,24 @@ However there is no DAI - CRV pool, so we will execute multi hop swaps, DAI to W
 
 ### Function swapExactInputMultiHop
 
-This function will swap `all` of DAI for `maximum amount` of CRV. It will execute multi hop swaps from DAI to WETH and then WETH to CRV.
+This function will swap WETH for maximum amount of DAI.
 
 1. Transfer `amountIn` from `msg.sender`
 2. Approve `amountIn` to `router`
 3. Setup the swapping `path`
-4. Send CRV to msg.sender
+4. Prepare struct ISwapRouter.ExactInputParams
+5. Execute the trade by calling `router.exactInput` with the parameters prepared above
 
 ### Function swapExactOutputMultiHop
 
-This function will swap `minimum` DAI to obtain a `specific amount` of CRV. It will execute multi hop swaps from DAI to WETH and then WETH to CRV.
+This function will swap minimum amount of WETH for a specific amount of DAI.
 
 1. Transfer `amountInMax`from `msg.sender`
 2. Approve `amountInMax` to `router`
 3. Setup the swapping `path`
-4. Call `swapTokensForExactTokens` on IUniswapV2Router and store amount of DAI spent by Uniswap in amounts (uint[])
-5. Refund DAI to `msg.sender` if not all of DAI was spent. Amount of DAI spent by Uniswap is stored in amounts[0]
+4. Call `swapTokensForExactTokens` on IUniswapV2Router and store the actual amount of token in swapped for token out in amountSwap (uint)
+5. Refund efund WETH not spent back to msg.sender
+6. Reset approvals of WETH for router to 0
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
