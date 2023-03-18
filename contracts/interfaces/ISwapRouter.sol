@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.17;
+// pragma solidity ^0.8.17;
+pragma solidity 0.7.6;
+pragma abicoder v2;
 
 interface ISwapRouter {
     struct ExactInputSingleParams {

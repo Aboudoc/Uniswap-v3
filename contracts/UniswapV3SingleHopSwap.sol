@@ -1,8 +1,14 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.17;
+// SPDX-License-Identifier: GPL-2.0-or-later
 
-import "./IERC20.sol";
-import "./ISwapRouter.sol";
+pragma solidity ^0.7.6;
+pragma abicoder v2;
+
+import "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol";
+
+import "./interfaces/IWETH.sol";
+import "./interfaces/IERC20.sol";
+
+// import "./interfaces/ISwapRouter.sol";
 
 contract UniswapV3SingleHopSwap {
     ISwapRouter private constant router =
@@ -11,7 +17,7 @@ contract UniswapV3SingleHopSwap {
     address private constant WETH = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2;
     address private constant DAI = 0x6B175474E89094C44Da98b954EedeAC495271d0F;
 
-    IERC20 private constant weth = IERC20(WETH);
+    IWETH private constant weth = IWETH(WETH);
     IERC20 private constant dai = IERC20(DAI);
 
     function swapExactInputSingleHop(uint amountIn, uint amountOutMin)
