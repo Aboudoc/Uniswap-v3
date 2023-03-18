@@ -58,7 +58,52 @@ describe("UniswapV3", function () {
 
   describe("UniswapV3MultiHopSwap", function () {
     let accounts, dai, weth, uniswapV3MultiHopSwap;
-    beforeEach(async function () {});
-    it("", async function () {});
+
+    beforeEach(async function () {
+      accounts = await ethers.getSigners();
+
+      dai = await ethers.getContractAt("IERC20", DAI);
+      weth = await ethers.getContractAt("IWETH", WETH);
+
+      const UniswapV3MultiHopSwap = await ethers.getContractFactory(
+        "UniswapV3MultiHopSwap"
+      );
+
+      uniswapV3MultiHopSwap = await UniswapV3MultiHopSwap.deploy();
+      await uniswapV3MultiHopSwap.deployed();
+    });
+
+    it("swapExactInputMultiHop", async function () {
+      const amountIn = 10n ** 18n;
+
+      await weth.deposit({ value: amountIn });
+      await weth.approve(uniswapV3MultiHopSwap.address, amountIn);
+
+      await uniswapV3MultiHopSwap.swapExactInputMultiHop(amountIn, 1);
+
+      console.log(
+        "DAI balance after",
+        await dai.balanceOf(accounts[0].address)
+      );
+    });
+
+    it("swapExactOutputMultiHop", async function () {
+      // 1 ETH will be sent and we will try to get 100 DAI
+      const amountInMax = 10n ** 18n;
+      const amountOut = 100n * 10n ** 18n;
+
+      await weth.deposit({ value: amountInMax });
+      await weth.approve(uniswapV3MultiHopSwap.address, amountInMax);
+
+      await uniswapV3MultiHopSwap.swapExactOutputMultiHop(
+        amountOut,
+        amountInMax
+      );
+
+      console.log(
+        "DAI balance after",
+        await dai.balanceOf(accounts[0].address)
+      );
+    });
   });
 });

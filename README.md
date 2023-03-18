@@ -10,7 +10,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/Aboudoc/Uniswap-v2.git">
+  <a href="https://github.com/Aboudoc/Uniswap-v3.git">
     <img src="images/logo1.png" alt="Logo" width="100" height="80">
   </a>
 
@@ -140,7 +140,7 @@ To get a local copy up and running follow these simple example steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/Aboudoc/Uniswap-v2.git
+   git clone https://github.com/Aboudoc/Uniswap-v3.git
    ```
 2. Install NPM packages
    ```sh
@@ -370,7 +370,7 @@ Consider Uniswap trading fee = 0.3%
 - [ ] Deploy script
 - [ ] Unit test
 
-See the [open issues](https://github.com/Aboudoc/Uniswap-v2.git/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/Aboudoc/Uniswap-v3.git/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -405,7 +405,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Reda Aboutika - [@twitter](https://twitter.com/AboutikaR) - reda.aboutika@gmail.com
 
-Project Link: [https://github.com/Aboudoc/Uniswap-v2.git](https://github.com/Aboudoc/Uniswap-v2.git)
+Project Link: [https://github.com/Aboudoc/Uniswap-v3.git](https://github.com/Aboudoc/Uniswap-v3.git)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -420,16 +420,16 @@ Project Link: [https://github.com/Aboudoc/Uniswap-v2.git](https://github.com/Abo
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/Aboudoc/Uniswap-v2.svg?style=for-the-badge
-[contributors-url]: https://github.com/Aboudoc/Uniswap-v2/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Aboudoc/Uniswap-v2.svg?style=for-the-badge
-[forks-url]: https://github.com/Aboudoc/Uniswap-v2/network/members
-[stars-shield]: https://img.shields.io/github/stars/Aboudoc/Uniswap-v2.svg?style=for-the-badge
-[stars-url]: https://github.com/Aboudoc/Uniswap-v2/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Aboudoc/Uniswap-v2.svg?style=for-the-badge
-[issues-url]: https://github.com/Aboudoc/Uniswap-v2/issues
-[license-shield]: https://img.shields.io/github/license/Aboudoc/Uniswap-v2.svg?style=for-the-badge
-[license-url]: https://github.com/Aboudoc/Uniswap-v2/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/Aboudoc/Uniswap-v3.svg?style=for-the-badge
+[contributors-url]: https://github.com/Aboudoc/Uniswap-v3/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Aboudoc/Uniswap-v3.svg?style=for-the-badge
+[forks-url]: https://github.com/Aboudoc/Uniswap-v3/network/members
+[stars-shield]: https://img.shields.io/github/stars/Aboudoc/Uniswap-v3.svg?style=for-the-badge
+[stars-url]: https://github.com/Aboudoc/Uniswap-v3/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Aboudoc/Uniswap-v3.svg?style=for-the-badge
+[issues-url]: https://github.com/Aboudoc/Uniswap-v3/issues
+[license-shield]: https://img.shields.io/github/license/Aboudoc/Uniswap-v3.svg?style=for-the-badge
+[license-url]: https://github.com/Aboudoc/Uniswap-v3/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/r%C3%A9da-aboutika-34305453/?originalSubdomain=fr
 [product-screenshot]: https://ethereum.org/static/28214bb68eb5445dcb063a72535bc90c/9019e/hero.webp
