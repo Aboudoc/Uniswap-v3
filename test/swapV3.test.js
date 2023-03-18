@@ -11,11 +11,14 @@ describe("UniswapV3", function () {
 
     beforeEach(async function () {
       accounts = await ethers.getSigners();
+
       dai = await ethers.getContractAt("IERC20", DAI);
       weth = await ethers.getContractAt("IWETH", WETH);
+
       const UniswapV3SingleHopSwap = await ethers.getContractFactory(
         "UniswapV3SingleHopSwap"
       );
+
       uniswapV3SingleHopSwap = await UniswapV3SingleHopSwap.deploy();
       await uniswapV3SingleHopSwap.deployed();
     });
@@ -24,17 +27,38 @@ describe("UniswapV3", function () {
       const amountIn = 10n ** 18n;
 
       await weth.deposit({ value: amountIn });
+
       await weth.approve(uniswapV3SingleHopSwap.address, amountIn);
 
       await uniswapV3SingleHopSwap.swapExactInputSingleHop(amountIn, 1);
 
-      console.log("DAI balance", await dai.balanceOf(accounts[0].address));
+      const daiBalance = await dai.balanceOf(accounts[0].address);
+      console.log("DAI balance after", daiBalance);
+    });
+    it("swapExactOutputSingle", async function () {
+      //swapExactOutputSingle
+      // 1ETH will be sent and we will try to get 1000DAI
+      const wethAmountInMax = 10n ** 18n;
+      const daiAmountOut = 100n * 10n ** 18n;
 
-      // expect(await lock.unlockTime()).to.equal(unlockTime);
+      await weth.deposit({ value: wethAmountInMax });
+
+      await weth.approve(uniswapV3SingleHopSwap.address, wethAmountInMax);
+
+      await uniswapV3SingleHopSwap.swapExactOutputSingleHop(
+        daiAmountOut,
+        wethAmountInMax
+      );
+
+      const daiBalance = await dai.balanceOf(accounts[0].address);
+      // We se should have 100 dai
+      console.log("DAI balance after", daiBalance);
     });
   });
 
   describe("UniswapV3MultiHopSwap", function () {
+    let accounts, dai, weth, uniswapV3MultiHopSwap;
+    beforeEach(async function () {});
     it("", async function () {});
   });
 });
