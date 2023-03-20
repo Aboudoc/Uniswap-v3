@@ -120,10 +120,6 @@ To get a local copy up and running follow these simple example steps.
   npm install --save-dev hardhat
   ```
 
-  ```sh
-  npm add @uniswap/v3-periphery @uniswap/v3-core
-  ```
-
   run:
 
   ```sh
