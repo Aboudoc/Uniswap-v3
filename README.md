@@ -152,6 +152,14 @@ To get a local copy up and running follow these simple example steps.
     npm add @uniswap/v3-periphery @uniswap/v3-core
    ```
 
+   For openzeppelin contract, we'll need to install first `solidity 0.7`
+
+   ```sh
+   npm i @openzeppelin/contracts@3.4.2
+   ```
+
+   To fix compiler errors, **_we'll need to change the compilation settings_**
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
@@ -170,7 +178,7 @@ You can find a deep overview of CPAMM in [this repo](https://github.com/Aboudoc/
 ## Test
 
 <div>
- <img src="images/test.png" alt="Test">
+<img src="images/test.png" alt="Test">
 </div>
 
 ## Uniswap V3 Single Hop Swap
@@ -235,37 +243,43 @@ This function will swap minimum amount of WETH for a specific amount of DAI.
 
 ## Uniswap V3 Add and Remove Liquidity
 
-Deposit your tokens into an Uniswap V2 pool to earn trading fees.
+Manage liquidity in Uniswap V3
 
-This is called adding liquidity.
-
-Remove liquidity to withdraw your tokens and claim your trading fees.
+Mint new position
+Increase liquidity
+Decrease liquidity
+Collect fees and withdraw tokens
 
 ### State variables
 
-1. Address of tokens and the addresses of the router and the factory. Declare pair variable
-2. Set interfaces for tokens, router and factory
+Contract inherits from `IERC721Receiver`
 
-### Constructor
+1. Address of tokens. Set MIN_TICK, MAX_TICK, TICK_SPACING
+2. Set interfaces for tokens and manager with the `INonfungiblePositionManager` interface
 
-1. Setup pair (IERC20) by calling getPair() on factory
+### Function onERC721Received
 
-### Function addLiquidity
+This function is called when safeTransferFrom is called on INonFungiblePositionManager.
 
-This function adds liquidity to the Uniswap WETH - DAI pool.
+### Function onERC721Received
 
 1. Transfer `wethAmountDesired` and `daiAmountDesired` from `msg.sender`
 2. Approve `amountwethAmountDesired` and `daiAmountDesired` to `router`
 3. Call `addLiqiuidity()` on `router` and store `wethAmount`, `daiAmount` and `liquidity` returned from the function call
 4. Refund to msg.sender, excess WETH and DAI that were not added to liquidity
 
-### Function removeLiquidity
+### Function mint
 
 This function removes liquidity from the Uniswap WETH - DAI pool.
 
-1. Transfer `liquidity` from `msg.sender`
-2. Approve `liquidity` to `router`
-3. Call `removeLiqiuidity()` on `router`
+1. Transfer DAI and WETH from `msg.sender` into this contract. `amount0ToAdd` is DAI amount,`amount1ToAdd` is WETH
+2. Approve `manager` to spend DAI and WETH from this contract
+3. Set `tickLower` and `tickUpper`, price range to add liquidity. Both ticks must be a multiple of `TICK_SPACING`.
+4. Prepare parameter to add new liquidity and mint new position
+5. Add liquidity by calling `manager.mint` with the parameters prepared above
+6. manager.mint returns 4 outputs. Refund tokens not added to liquidity back to msg.sender. We pulled in amount0ToAdd and amount1ToAdd. Actual amount added to Uniswap V3 are amount0 and amount1.
+7. Reset approvals of DAI and WETH for manager to 0
+8. Emit Mint with tokenId.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -293,10 +307,10 @@ The contract inherit from `IUniswapV2Callee`
 
 ```js
 function swap(
-    uint amount0Out,
-    uint amount1Out,
-    address to,
-    bytes calldata data
+   uint amount0Out,
+   uint amount1Out,
+   address to,
+   bytes calldata data
 ) external;
 
 ```
