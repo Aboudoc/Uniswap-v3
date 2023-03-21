@@ -257,7 +257,7 @@ npx hardhat test test/liquidityV3.test.js
 ```
 
 <div>
-<img src="images/test1bis.png" alt="Test">
+<img src="images/test1.png" alt="Test">
 </div>
 
 ## Uniswap V3 Add and Remove Liquidity
@@ -312,17 +312,17 @@ npx hardhat test test/unlock-account.test.js
 npx hardhat test test/flashSwapV3.test.js
 ```
 
-<div>
-<img src="images/test2.png" alt="Test">
-</div>
+<!-- <div>
+<img src="images/testx.png" alt="Test">
+</div> -->
 
 ```sh
 npx hardhat test test/flashSwapArbV3.test.js
 ```
 
-<div>
-<img src="images/test3.png" alt="Test">
-</div>
+<!-- <div>
+<img src="images/testy.png" alt="Test">
+</div> -->
 
 ## Uniswap V3 Flash Swap
 
