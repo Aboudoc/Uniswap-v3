@@ -254,7 +254,7 @@ In Uniswap V3 the curve of the real reserve is giving by the formula below (oran
 Let's derive this equation starting from the constant product equation `XY = K`
 
 <div>
-<img src="images/maths0.png" alt="Maths">
+<img src="images/maths0bis.png" alt="Maths">
 </div>
 
 Let's now derive the equation, the curve for the real reserve
