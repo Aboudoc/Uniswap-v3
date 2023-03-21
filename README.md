@@ -62,6 +62,7 @@
         <li><a href="#Function-swapExactInputMultiHop">Function swapExactInputMultiHop</a></li>
         <li><a href="#Function-swapExactOutputMultiHop">Function swapExactOutputMultiHop</a></li>
       </ul>
+    <li><a href="#Test-Mint-new-position">Test Mint new position</a></li>
     <li><a href="#Uniswap-V3-Add-and-Remove-Liquidity">Uniswap V2 Add and Remove Liquidity</a></li>
     <ul>
         <li><a href="#State-variables">State variables</a></li>
@@ -171,7 +172,15 @@ If you need testnet funds, use the [Alchemy testnet faucet](https://goerlifaucet
 Uniswap V3 is a Constant product AMM (automated market maker) <=> a decentralized exchange where 2 tokens are traded.
 You can find a deep overview of CPAMM in [this repo](https://github.com/Aboudoc/Constant-Product-AMM)
 
-## Test
+## Test Swap
+
+```sh
+npx hardhat test test/unlock-account.test.js
+```
+
+```sh
+npx hardhat test test/swapV3.test.js
+```
 
 <div>
 <img src="images/test.png" alt="Test">
@@ -237,6 +246,20 @@ This function will swap minimum amount of WETH for a specific amount of DAI.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Test Mint new position
+
+```sh
+npx hardhat test test/unlock-account.test.js
+```
+
+```sh
+npx hardhat test test/liquidityV3.test.js
+```
+
+<div>
+<img src="images/test1bis.png" alt="Test">
+</div>
+
 ## Uniswap V3 Add and Remove Liquidity
 
 Manage liquidity in Uniswap V3
@@ -278,6 +301,28 @@ This function removes liquidity from the Uniswap WETH - DAI pool.
 8. Emit Mint with tokenId.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Test Flash Swap
+
+```sh
+npx hardhat test test/unlock-account.test.js
+```
+
+```sh
+npx hardhat test test/flashSwapV3.test.js
+```
+
+<div>
+<img src="images/test2.png" alt="Test">
+</div>
+
+```sh
+npx hardhat test test/flashSwapArbV3.test.js
+```
+
+<div>
+<img src="images/test3.png" alt="Test">
+</div>
 
 ## Uniswap V3 Flash Swap
 
@@ -362,6 +407,16 @@ npx hardhat test test/swapV3.test.js
 This contract assumes that token0 and token1 both have same decimals
 
 Consider Uniswap trading fee = 0.3%
+
+You can find Uniswap pools referenced below. Select a pool with the highest TVL
+
+[Uniswap V3 Pool Infos](https://info.uniswap.org/#/pools)
+
+You can find official Uniswap documentation below:
+
+[Single Hop Swap](https://docs.uniswap.org/contracts/v3/guides/swaps/single-swaps)
+
+[Multi Hop Swap](https://docs.uniswap.org/contracts/v3/guides/swaps/multihop-swaps)
 
 ### Further reading
 

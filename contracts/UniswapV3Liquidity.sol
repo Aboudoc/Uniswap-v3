@@ -5,6 +5,7 @@ pragma abicoder v2;
 import "./interfaces/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol";
 import "@uniswap/v3-periphery/contracts/interfaces/INonfungiblePositionManager.sol";
+import "hardhat/console.sol";
 
 contract UniswapV3Liquidity is IERC721Receiver {
     address private constant DAI = 0x6B175474E89094C44Da98b954EedeAC495271d0F;
@@ -53,7 +54,8 @@ contract UniswapV3Liquidity is IERC721Receiver {
                 deadline: block.timestamp
             });
 
-        (uint tokenId, , uint amount0, uint amount1) = manager.mint(params);
+        (uint tokenId, uint liquidity, uint amount0, uint amount1) = manager
+            .mint(params);
 
         if (amount0ToAdd > amount0) {
             dai.approve(address(manager), 0);
@@ -63,6 +65,10 @@ contract UniswapV3Liquidity is IERC721Receiver {
             weth.approve(address(manager), 0);
             weth.transfer(msg.sender, amount1ToAdd - amount1);
         }
+
+        console.log("Token id", tokenId);
+        console.log("Liquidity", liquidity);
+
 
         emit Mint(tokenId);
     }
