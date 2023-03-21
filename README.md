@@ -263,10 +263,22 @@ Let's now derive the equation, the curve for the real reserve
 <img src="images/maths1.png" alt="Maths">
 </div>
 
-Now that we can rewrite x and y in terms of the liquidity L and the current price P, let's now derive the equation for the real reserves
+Now that we can rewrite x and y in terms of the liquidity L and the current price P, let's now derive the equation for the real reserves (solve for Xv and Yv)
 
 <div>
-<img src="images/maths2.png" alt="Maths">
+<img src="images/maths02.png" alt="Maths">
+</div>
+
+Let's solve for `Xv`
+
+<div>
+<img src="images/maths02bis.png" alt="Maths">
+</div>
+
+Let's solve for `Yv`
+
+<div>
+<img src="images/maths02ter.png" alt="Maths">
 </div>
 
 The final step to derive the curve for the real reserve is to combine all of the equations that we have derived so far
