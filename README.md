@@ -278,7 +278,7 @@ Let's solve for `Xv`
 Let's solve for `Yv`
 
 <div>
-<img src="images/maths02ter.png" alt="Maths">
+<img src="images/math02ter.png" alt="Maths">
 </div>
 
 The final step to derive the curve for the real reserve is to combine all of the equations that we have derived so far
