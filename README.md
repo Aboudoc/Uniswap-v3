@@ -62,6 +62,7 @@
         <li><a href="#Function-swapExactInputMultiHop">Function swapExactInputMultiHop</a></li>
         <li><a href="#Function-swapExactOutputMultiHop">Function swapExactOutputMultiHop</a></li>
       </ul>
+    <li><a href="#Uniswap-V3-Curve-of-real-reserves">Uniswap V3 Curve of real reserves</a></li> 
     <li><a href="#Test-Mint-new-position">Test Mint new position</a></li>
     <li><a href="#Uniswap-V3-Add-and-Remove-Liquidity">Uniswap V2 Add and Remove Liquidity</a></li>
     <ul>
@@ -246,6 +247,38 @@ This function will swap minimum amount of WETH for a specific amount of DAI.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Uniswap V3 Curve of real reserves
+
+In Uniswap V3 the curve of the real reserve is giving by the formula below (orange square)
+
+Let's derive this equation starting from the constant product equation `XY = K`
+
+<div>
+<img src="images/maths0.png" alt="Maths">
+</div>
+
+Let's now derive the equation, the curve for the real reserve
+
+<div>
+<img src="images/maths1.png" alt="Maths">
+</div>
+
+Now that we can rewrite x and y in terms of the liquidity L and the current price P, let's now derive the equation for the real reserves
+
+<div>
+<img src="images/maths2.png" alt="Maths">
+</div>
+
+The final step to derive the curve for the real reserve is to combine all of the equations that we have derived so far
+
+<div>
+<img src="images/maths3png" alt="Maths">
+</div>
+
+Later on, we will use this equation to derive the `liquidity delta`: changing liquidity when we add some amount of token x and token y
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Test Mint new position
 
 ```sh
@@ -259,6 +292,8 @@ npx hardhat test test/liquidityV3.test.js
 <div>
 <img src="images/test1.png" alt="Test">
 </div>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Uniswap V3 Add and Remove Liquidity
 
