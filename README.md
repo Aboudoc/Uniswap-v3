@@ -272,7 +272,7 @@ Now that we can rewrite x and y in terms of the liquidity L and the current pric
 The final step to derive the curve for the real reserve is to combine all of the equations that we have derived so far
 
 <div>
-<img src="images/maths3png" alt="Maths">
+<img src="images/maths3.png" alt="Maths">
 </div>
 
 Later on, we will use this equation to derive the `liquidity delta`: changing liquidity when we add some amount of token x and token y
