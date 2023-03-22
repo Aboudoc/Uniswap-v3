@@ -63,8 +63,11 @@
         <li><a href="#Function-swapExactOutputMultiHop">Function swapExactOutputMultiHop</a></li>
       </ul>
     <li><a href="#Uniswap-V3-Curve-of-real-reserves">Uniswap V3 Curve of real reserves</a></li> 
+    <li><a href="#Uniswap-V3-Liquidity-of-a-single-position">Uniswap V3 Liquidity of a single position</a></li> 
     <li><a href="#Test-Mint-new-position">Test Mint new position</a></li>
     <li><a href="#Test-Collect-fees">Test Collect fees</a></li>
+    <li><a href="#Test-Increase-liquidity">Test Increase liquidity</a></li>
+    <li><a href="#Test-Decrease-liquidity">Test Decrease liquidity</a></li>
     <li><a href="#Uniswap-V3-Add-and-Remove-Liquidity">Uniswap V2 Add and Remove Liquidity</a></li>
     <ul>
         <li><a href="#State-variables">State variables</a></li>
@@ -88,7 +91,7 @@
   </ol>
 </details>
 
-<!-- ABOUT THE PROJECT -->
+<!-- ABOUT THE PROJECT Uniswap V3 - Liquidity of a single position -->
 
 ## About The Project
 
@@ -321,6 +324,48 @@ npx hardhat test test/liquidityV3.test.js
 </div>
 
 No fees in this case
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Uniswap V3 Liquidity of a single position
+
+We previously derived the curve for the real reserves.
+
+Let's use this equation to derive the equation for the liquidity(this equation has 3 parts):
+
+<div>
+<img src="images/maths04.png" alt="Test">
+</div>
+
+Let's start with the first case
+
+<div>
+<img src="images/maths05.png" alt="Test">
+</div>
+
+Let's derive the equation for liquidity when the current price >= Pb
+
+<div>
+<img src="images/maths06.png" alt="Test">
+</div>
+
+Let's apply the same technique to find Ly
+
+<div>
+<img src="images/maths07.png" alt="Test">
+</div>
+
+Find Lx and Ly
+
+<div>
+<img src="images/maths08.png" alt="Test">
+</div>
+
+Finally let's put the two equations that we derived earlier
+
+<div>
+<img src="images/maths09.png" alt="Test">
+</div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

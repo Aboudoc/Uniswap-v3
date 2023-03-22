@@ -134,6 +134,7 @@ describe("Liquidity on Uniswap v3", () => {
     );
 
     await liquidityExamples.increaseLiquidity(daiAmount, wethAmount);
+    //////////// we already logged amount0, amount1 and liquidity from the contract////////////
   });
 
   //   it("decreaseLiquidity", async () => {
