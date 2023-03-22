@@ -49,7 +49,7 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#Constant-Product-AMM">Constant Product AMM</a></li>
-    <li><a href="#Test">Test</a></li>
+    <li><a href="#Test-Single-and-Multi-hop-swap">Test Single and Multi hop swap</a></li>
     <li><a href="#Uniswap-V3-Single-Hop-Swap">Uniswap V2 Single Hop Swap</a></li>
     <ul>
         <li><a href="#State-variables">State variables</a></li>
@@ -64,6 +64,7 @@
       </ul>
     <li><a href="#Uniswap-V3-Curve-of-real-reserves">Uniswap V3 Curve of real reserves</a></li> 
     <li><a href="#Test-Mint-new-position">Test Mint new position</a></li>
+    <li><a href="#Test-Collect-fees">Test Collect fees</a></li>
     <li><a href="#Uniswap-V3-Add-and-Remove-Liquidity">Uniswap V2 Add and Remove Liquidity</a></li>
     <ul>
         <li><a href="#State-variables">State variables</a></li>
@@ -173,7 +174,7 @@ If you need testnet funds, use the [Alchemy testnet faucet](https://goerlifaucet
 Uniswap V3 is a Constant product AMM (automated market maker) <=> a decentralized exchange where 2 tokens are traded.
 You can find a deep overview of CPAMM in [this repo](https://github.com/Aboudoc/Constant-Product-AMM)
 
-## Test Swap
+## Test Single and Multi hop swap
 
 ```sh
 npx hardhat test test/unlock-account.test.js
@@ -186,6 +187,8 @@ npx hardhat test test/swapV3.test.js
 <div>
 <img src="images/test.png" alt="Test">
 </div>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Uniswap V3 Single Hop Swap
 
@@ -304,6 +307,20 @@ npx hardhat test test/liquidityV3.test.js
 <div>
 <img src="images/test1.png" alt="Test">
 </div>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Test Collect fees
+
+```sh
+npx hardhat test test/liquidityV3.test.js
+```
+
+<div>
+<img src="images/test2.png" alt="Test">
+</div>
+
+No fees in this case
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

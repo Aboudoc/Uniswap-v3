@@ -34,6 +34,10 @@ describe("Liquidity on Uniswap v3", () => {
     let daiBalance = await dai.balanceOf(accounts[0].address);
     let wethBalance = await weth.balanceOf(accounts[0].address);
 
+    console.log(
+      "----------------------------------------------------------------"
+    );
+
     console.log(`DAI  balance: ${daiBalance}`);
     console.log(`WETH  balance: ${wethBalance}`);
 
@@ -90,7 +94,9 @@ describe("Liquidity on Uniswap v3", () => {
       .connect(accounts[0])
       .approve(liquidityExamples.address, wethAmount);
 
-    console.log("-------------------------Mint---------------------------");
+    console.log(
+      "-----------------------------Mint-------------------------------"
+    );
 
     await liquidityExamples.mint(daiAmount, wethAmount);
 
@@ -98,12 +104,9 @@ describe("Liquidity on Uniswap v3", () => {
       "----------------------Balance after Mint------------------------"
     );
 
+    console.log("DAI balance after", await dai.balanceOf(accounts[0].address));
     console.log(
-      "DAI balance after add liquidity",
-      await dai.balanceOf(accounts[0].address)
-    );
-    console.log(
-      "WETH balance after add liquidity",
+      "WETH balance after",
       await weth.balanceOf(accounts[0].address)
     );
   });
@@ -137,12 +140,16 @@ describe("Liquidity on Uniswap v3", () => {
   //     console.log(`usdc ${await usdc.balanceOf(liquidityExamples.address)}`);
   //   });
 
-  //   it("collectAllFees", async () => {
-  //     // change to collect
-  //     await liquidityExamples.collectAllFees();
+  it("collectAllFees", async () => {
+    console.log(
+      "--------------------------Collect fees--------------------------"
+    );
+    const tokenId = await liquidityExamples.tokenId();
+    console.log(`token id: ${tokenId}`);
 
-  //     console.log("--- collect fees ---");
-  //     console.log(`dai ${await dai.balanceOf(liquidityExamples.address)}`);
-  //     console.log(`usdc ${await usdc.balanceOf(liquidityExamples.address)}`);
-  //   });
+    await liquidityExamples.collect();
+    //////////// we already logged the fees from the contract////////////
+    // console.log(`dai ${await dai.balanceOf(accounts[0].address)}`);
+    // console.log(`weth ${await weth.balanceOf(accounts[0].address)}`);
+  });
 });

@@ -18,15 +18,17 @@ contract UniswapV3Liquidity is IERC721Receiver {
     int24 private constant MAX_TICK = -MIN_TICK;
     int24 private constant TICK_SPACING = 60;
 
+    uint256 public tokenId;
+
     INonfungiblePositionManager public manager =
         INonfungiblePositionManager(0xC36442b4a4522E871399CD717aBDD847Ab11FE88);
 
-    event Mint(uint tokenId);
+    event Mint(uint _tokenId);
 
     function onERC721Received(
         address operator,
         address from,
-        uint tokenId,
+        uint _tokenId,
         bytes calldata
     ) external pure override returns (bytes4) {
         return IERC721Receiver.onERC721Received.selector;
@@ -54,8 +56,12 @@ contract UniswapV3Liquidity is IERC721Receiver {
                 deadline: block.timestamp
             });
 
-        (uint tokenId, uint liquidity, uint amount0, uint amount1) = manager
+        (uint _tokenId, uint liquidity, uint amount0, uint amount1) = manager
             .mint(params);
+
+        // console.log("Token id", _tokenId);
+
+        tokenId = _tokenId;
 
         if (amount0ToAdd > amount0) {
             dai.approve(address(manager), 0);
@@ -69,12 +75,11 @@ contract UniswapV3Liquidity is IERC721Receiver {
         console.log("Token id", tokenId);
         console.log("Liquidity", liquidity);
 
-
-        emit Mint(tokenId);
+        emit Mint(_tokenId);
     }
 
     function increaseLiquidity(
-        uint tokenId,
+        uint _tokenId,
         uint amount0ToAdd,
         uint amount1ToAdd
     ) external {
@@ -87,7 +92,7 @@ contract UniswapV3Liquidity is IERC721Receiver {
         INonfungiblePositionManager.IncreaseLiquidityParams
             memory params = INonfungiblePositionManager
                 .IncreaseLiquidityParams({
-                    tokenId: tokenId,
+                    tokenId: _tokenId,
                     amount0Desired: amount0ToAdd,
                     amount1Desired: amount1ToAdd,
                     amount0Min: 0,
@@ -108,11 +113,11 @@ contract UniswapV3Liquidity is IERC721Receiver {
         }
     }
 
-    function decreaseLiquidity(uint tokenId, uint128 liquidity) external {
+    function decreaseLiquidity(uint _tokenId, uint128 liquidity) external {
         INonfungiblePositionManager.DecreaseLiquidityParams
             memory params = INonfungiblePositionManager
                 .DecreaseLiquidityParams({
-                    tokenId: tokenId,
+                    tokenId: _tokenId,
                     liquidity: liquidity,
                     amount0Min: 0,
                     amount1Min: 0,
@@ -122,7 +127,7 @@ contract UniswapV3Liquidity is IERC721Receiver {
         manager.decreaseLiquidity(params);
     }
 
-    function collect(uint tokenId) external {
+    function collect() external {
         INonfungiblePositionManager.CollectParams
             memory params = INonfungiblePositionManager.CollectParams({
                 tokenId: tokenId,
@@ -131,6 +136,9 @@ contract UniswapV3Liquidity is IERC721Receiver {
                 amount1Max: type(uint128).max
             });
 
-        manager.collect(params);
+        (uint amount0, uint amount1) = manager.collect(params);
+
+        console.log("fee 0:", amount0);
+        console.log("fee 1:", amount1);
     }
 }
