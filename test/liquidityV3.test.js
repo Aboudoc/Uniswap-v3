@@ -68,7 +68,7 @@ describe("Liquidity on Uniswap v3", () => {
     console.log(`WETH whale balance: ${wethWhaleBalance}`);
 
     // Send DAI and WETH to accounts[0]
-    const wethAmount = 10n ** 18n;
+    const wethAmount = 50n * 10n ** 18n;
     const daiAmount = 8000n * 10n ** 18n;
     // const usdcAmount = 1000n * 10n ** 6n;
 
@@ -111,22 +111,30 @@ describe("Liquidity on Uniswap v3", () => {
     );
   });
 
-  //   it.skip("increaseLiquidityCurrentRange", async () => {
-  //     const daiAmount = 20n * 10n ** 18n;
-  //     const usdcAmount = 20n * 10n ** 6n;
+  it("increaseLiquidityCurrentRange", async () => {
+    const daiAmount = 5000n * 10n ** 18n;
+    const wethAmount = 10n * 10n ** 18n;
 
-  //     await dai
-  //       .connect(accounts[0])
-  //       .approve(liquidityExamples.address, daiAmount);
-  //     await usdc
-  //       .connect(accounts[0])
-  //       .approve(liquidityExamples.address, usdcAmount);
-  //     // change to increaseLiquidity()
-  //     await liquidityExamples.increaseLiquidityCurrentRange(
-  //       daiAmount,
-  //       usdcAmount
-  //     );
-  //   });
+    await dai
+      .connect(accounts[0])
+      .approve(liquidityExamples.address, daiAmount);
+    await weth
+      .connect(accounts[0])
+      .approve(liquidityExamples.address, wethAmount);
+
+    await dai
+      .connect(accounts[0])
+      .approve(liquidityExamples.address, daiAmount);
+    await weth
+      .connect(accounts[0])
+      .approve(liquidityExamples.address, wethAmount);
+
+    console.log(
+      "----------------------Increase Liquidity------------------------"
+    );
+
+    await liquidityExamples.increaseLiquidity(daiAmount, wethAmount);
+  });
 
   //   it("decreaseLiquidity", async () => {
   //     const tokenId = await liquidityExamples.tokenId();

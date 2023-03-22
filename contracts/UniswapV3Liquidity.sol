@@ -78,11 +78,8 @@ contract UniswapV3Liquidity is IERC721Receiver {
         emit Mint(_tokenId);
     }
 
-    function increaseLiquidity(
-        uint _tokenId,
-        uint amount0ToAdd,
-        uint amount1ToAdd
-    ) external {
+    // Use tokenId state variable
+    function increaseLiquidity(uint amount0ToAdd, uint amount1ToAdd) external {
         dai.transferFrom(msg.sender, address(this), amount0ToAdd);
         weth.transferFrom(msg.sender, address(this), amount1ToAdd);
 
@@ -92,7 +89,7 @@ contract UniswapV3Liquidity is IERC721Receiver {
         INonfungiblePositionManager.IncreaseLiquidityParams
             memory params = INonfungiblePositionManager
                 .IncreaseLiquidityParams({
-                    tokenId: _tokenId,
+                    tokenId: tokenId,
                     amount0Desired: amount0ToAdd,
                     amount1Desired: amount1ToAdd,
                     amount0Min: 0,
@@ -100,7 +97,12 @@ contract UniswapV3Liquidity is IERC721Receiver {
                     deadline: block.timestamp
                 });
 
-        (, uint amount0, uint amount1) = manager.increaseLiquidity(params);
+        (uint liquidity, uint amount0, uint amount1) = manager
+            .increaseLiquidity(params);
+
+        console.log("Liquidity is:", liquidity);
+        console.log("amount 0 is:", amount0);
+        console.log("amount 1 is:", amount1);
 
         if (amount0ToAdd > amount0) {
             dai.approve(address(manager), 0);
