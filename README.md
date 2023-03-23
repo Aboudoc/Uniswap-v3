@@ -381,6 +381,15 @@ npx hardhat test test/liquidityV3.test.js
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+5000 DAI and 2,77 WETH added
+
+Amounts specified in `liquidityV3.test.js`:
+
+```js
+const daiAmount = 5000n * 10n ** 18n;
+const wethAmount = 10n * 10n ** 18n;
+```
+
 ## Test Decrease liquidity
 
 ```sh
