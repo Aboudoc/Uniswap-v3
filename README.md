@@ -390,6 +390,8 @@ const daiAmount = 5000n * 10n ** 18n;
 const wethAmount = 10n * 10n ** 18n;
 ```
 
+Learn more about [Add liquidity - How many dx, dy to add?](https://github.com/Aboudoc/Constant-Product-AMM#Constant-Product-AMM) in this repo about Constant Product AMM
+
 ## Test Decrease liquidity
 
 ```sh
