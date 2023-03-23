@@ -327,7 +327,7 @@ No fees in this case
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Uniswap V3 Liquidity of a single position
+## Uniswap V3 Liquidity of a single position 
 
 We previously derived the curve for the real reserves.
 
