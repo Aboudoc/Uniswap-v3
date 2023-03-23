@@ -491,7 +491,7 @@ The contract inherit from `IUniswapV2Callee`
 
 1. Call getPair() on factory and store the result inside pair variable (which is a IUniswapV2Pair interface)
 
-### Funuction flashSwap
+### Function flashSwap
 
 1. Prepare data of bytes to send. This can be any data, as long as it is not empty Uniswap will trigger a flash swap. For this example, we encode WETH and msg.sender.
 2. Call `swap()`on pair. Find below `swap()` from `IUniswapV2Pair`
@@ -558,6 +558,8 @@ This contract assumes that token0 and token1 both have same decimals
 
 Consider Uniswap trading fee = 0.3%
 
+### Further reading
+
 You can find Uniswap pools referenced below. Select a pool with the highest TVL
 
 [Uniswap V3 Pool Infos](https://info.uniswap.org/#/pools)
@@ -568,10 +570,6 @@ You can find official Uniswap documentation below:
 
 [Multi Hop Swap](https://docs.uniswap.org/contracts/v3/guides/swaps/multihop-swaps)
 
-### Further reading
-
-(...soon)
-
 ### Sources
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -580,10 +578,10 @@ You can find official Uniswap documentation below:
 
 ## Roadmap
 
-- [ ] Uniswap V3 TWAP
-- [ ] Further reading
+- [-] Uniswap V3 TWAP
+- [-] Further reading
 - [ ] Deploy script
-- [ ] Unit test
+- [-] Unit test
 
 See the [open issues](https://github.com/Aboudoc/Uniswap-v3.git/issues) for a full list of proposed features (and known issues).
 
