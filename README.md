@@ -63,8 +63,8 @@
         <li><a href="#Function-swapExactOutputMultiHop">Function swapExactOutputMultiHop</a></li>
       </ul>
     <li><a href="#Uniswap-V3-Curve-of-real-reserves">Uniswap V3 Curve of real reserves</a></li> 
-    <li><a href="#Uniswap-V3-Liquidity-of-a-single-position">Uniswap V3 Liquidity of a single position</a></li> 
     <li><a href="#Test-Mint-new-position">Test Mint new position</a></li>
+    <li><a href="#Uniswap-V3-Liquidity-of-a-single-position">Uniswap V3 Liquidity of a single position</a></li> 
     <li><a href="#Test-Collect-fees">Test Collect fees</a></li>
     <li><a href="#Test-Increase-liquidity">Test Increase liquidity</a></li>
     <li><a href="#Test-Decrease-liquidity">Test Decrease liquidity</a></li>
@@ -269,7 +269,7 @@ Let's now derive the equation, the curve for the real reserve
 <img src="images/maths1.png" alt="Maths">
 </div>
 
-Now that we can rewrite x and y in terms of the liquidity L and the current price P, let's now derive the equation for the real reserves (solve for Xv and Yv)
+Now that we can rewrite `x` and `y` in terms of the liquidity `L` and the current price `P`, let's now derive the equation for the real reserves (solve for Xv and Yv)
 
 <div>
 <img src="images/math02.png" alt="Maths">
@@ -366,6 +366,36 @@ Finally let's put the two equations that we derived earlier
 <div>
 <img src="images/maths09.png" alt="Test">
 </div>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Test Increase liquidity
+
+```sh
+npx hardhat test test/liquidityV3.test.js
+```
+
+<div>
+<img src="images/test3.png" alt="Test">
+</div>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Test Decrease liquidity
+
+```sh
+npx hardhat test test/liquidityV3.test.js
+```
+
+When we call the function `decreaseLiquidity`, it doesn't transfer the tokens back to contract
+
+To actually withdraw the tokens from Uniswap V3, after calling the function `decreaseLiquidity()`, we'll have to call the function `collect()`
+
+<div>
+<img src="images/test4.png" alt="Test">
+</div>
+
+Note that after calling `decreaseLiquidity`, DAI balance and WETH balance remain the same
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

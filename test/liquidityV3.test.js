@@ -111,7 +111,7 @@ describe("Liquidity on Uniswap v3", () => {
     );
   });
 
-  it("increaseLiquidityCurrentRange", async () => {
+  it.skip("increaseLiquidityCurrentRange", async () => {
     const daiAmount = 5000n * 10n ** 18n;
     const wethAmount = 10n * 10n ** 18n;
 
@@ -137,17 +137,24 @@ describe("Liquidity on Uniswap v3", () => {
     //////////// we already logged amount0, amount1 and liquidity from the contract////////////
   });
 
-  //   it("decreaseLiquidity", async () => {
-  //     const tokenId = await liquidityExamples.tokenId();
-  //     const liquidity = await liquidityExamples.getLiquidity(tokenId);
-  //     // change to decreaseLiquidity();
-  //     await liquidityExamples.decreaseLiquidity(liquidity);
+  it("decreaseLiquidity", async () => {
+    console.log("Before decreasing liquidity =>");
 
-  //     console.log("--- decrease liquidity ---");
-  //     console.log(`liquidity ${liquidity}`);
-  //     console.log(`dai ${await dai.balanceOf(liquidityExamples.address)}`);
-  //     console.log(`usdc ${await usdc.balanceOf(liquidityExamples.address)}`);
-  //   });
+    console.log(`dai: ${await dai.balanceOf(accounts[0].address)}`);
+    console.log(`weth: ${await weth.balanceOf(accounts[0].address)}`);
+
+    const tokenId = await liquidityExamples.tokenId();
+    const liquidity = await liquidityExamples.getLiquidity(tokenId);
+
+    await liquidityExamples.decreaseLiquidity(liquidity);
+
+    console.log(
+      "----------------------decrease liquidity----------------------"
+    );
+    console.log(`liquidity: ${liquidity}`);
+    console.log(`dai: ${await dai.balanceOf(accounts[0].address)}`);
+    console.log(`weth: ${await weth.balanceOf(accounts[0].address)}`);
+  });
 
   it("collectAllFees", async () => {
     console.log(

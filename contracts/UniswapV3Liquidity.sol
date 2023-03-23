@@ -56,7 +56,7 @@ contract UniswapV3Liquidity is IERC721Receiver {
                 deadline: block.timestamp
             });
 
-        (uint _tokenId, uint liquidity, uint amount0, uint amount1) = manager
+        (uint _tokenId, uint128 liquidity, uint amount0, uint amount1) = manager
             .mint(params);
 
         // console.log("Token id", _tokenId);
@@ -145,5 +145,10 @@ contract UniswapV3Liquidity is IERC721Receiver {
 
         console.log("fee 0:", amount0);
         console.log("fee 1:", amount1);
+    }
+
+    function getLiquidity(uint _tokenId) external view returns (uint128) {
+        (, , , , , , , uint128 liquidity, , , , ) = manager.positions(_tokenId);
+        return liquidity;
     }
 }
