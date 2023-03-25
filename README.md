@@ -452,6 +452,38 @@ This function removes liquidity from the Uniswap WETH - DAI pool.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Uniswap V3 Liquidity Delta
+
+<div>
+ <img src="images/maths10.png" alt="Test">
+</div>
+
+let's derive these two equations
+
+First, preliminary math:
+
+<div>
+ <img src="images/maths11.png" alt="Test">
+</div>
+
+Let's define liquidity delta
+
+<div>
+ <img src="images/maths12.png" alt="Test">
+</div>
+
+Four steps to calculate liquidity delta:
+
+<div>
+ <img src="images/maths13.png" alt="Test">
+</div>
+
+<div>
+ <img src="images/maths14.png" alt="Test">
+</div>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Test Flash Swap
 
 ```sh
