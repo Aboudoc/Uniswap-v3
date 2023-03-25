@@ -414,7 +414,7 @@ Note that after calling `decreaseLiquidity`, DAI balance and WETH balance remain
 ## Uniswap V3 Liquidity Delta
 
 <div>
- <img src="images/maths10.png" alt="Test">
+ <img src="images/math10.png" alt="Test">
 </div>
 
 let's derive these two equations
