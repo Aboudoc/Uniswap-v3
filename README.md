@@ -444,7 +444,7 @@ Four steps to calculate liquidity delta:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Uniswap V3 - How many tokens to add
+## Uniswap V3 How many tokens to add
 
 Let's see a real example of how to calculate the amount of tokens needed when we add liquidity to Uniswap V3
 
