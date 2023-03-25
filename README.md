@@ -428,7 +428,7 @@ First, preliminary math:
 Let's define liquidity delta
 
 <div>
- <img src="images/maths12.png" alt="Test">
+ <img src="images/math12.png" alt="Test">
 </div>
 
 Four steps to calculate liquidity delta:
