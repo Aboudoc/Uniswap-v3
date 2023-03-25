@@ -69,6 +69,7 @@
     <li><a href="#Test-Increase-liquidity">Test Increase liquidity</a></li>
     <li><a href="#Test-Decrease-liquidity">Test Decrease liquidity</a></li>
     <li><a href="#Uniswap-V3-Liquidity-Delta">Uniswap V3 Liquidity Delta</a></li>
+    <li><a href="#Uniswap-V3-How-many-tokens-to-add">Uniswap V3 How many tokens to add</a></li>
     <li><a href="#Uniswap-V3-Add-and-Remove-Liquidity">Uniswap V2 Add and Remove Liquidity</a></li>
     <ul>
         <li><a href="#State-variables">State variables</a></li>
