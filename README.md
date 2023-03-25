@@ -68,6 +68,7 @@
     <li><a href="#Test-Collect-fees">Test Collect fees</a></li>
     <li><a href="#Test-Increase-liquidity">Test Increase liquidity</a></li>
     <li><a href="#Test-Decrease-liquidity">Test Decrease liquidity</a></li>
+    <li><a href="#Uniswap-V3-Liquidity-Delta">Uniswap V3 Liquidity Delta</a></li>
     <li><a href="#Uniswap-V3-Add-and-Remove-Liquidity">Uniswap V2 Add and Remove Liquidity</a></li>
     <ul>
         <li><a href="#State-variables">State variables</a></li>
@@ -410,6 +411,38 @@ Note that after calling `decreaseLiquidity`, DAI balance and WETH balance remain
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Uniswap V3 Liquidity Delta
+
+<div>
+ <img src="images/maths10.png" alt="Test">
+</div>
+
+let's derive these two equations
+
+First, preliminary math:
+
+<div>
+ <img src="images/maths11.png" alt="Test">
+</div>
+
+Let's define liquidity delta
+
+<div>
+ <img src="images/maths12.png" alt="Test">
+</div>
+
+Four steps to calculate liquidity delta:
+
+<div>
+ <img src="images/maths13.png" alt="Test">
+</div>
+
+<div>
+ <img src="images/maths14.png" alt="Test">
+</div>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Uniswap V3 Add and Remove Liquidity
 
 Manage liquidity in Uniswap V3
@@ -449,38 +482,6 @@ This function removes liquidity from the Uniswap WETH - DAI pool.
 6. manager.mint returns 4 outputs. Refund tokens not added to liquidity back to msg.sender. We pulled in amount0ToAdd and amount1ToAdd. Actual amount added to Uniswap V3 are amount0 and amount1.
 7. Reset approvals of DAI and WETH for manager to 0
 8. Emit Mint with tokenId.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Uniswap V3 Liquidity Delta
-
-<div>
- <img src="images/maths10.png" alt="Test">
-</div>
-
-let's derive these two equations
-
-First, preliminary math:
-
-<div>
- <img src="images/maths11.png" alt="Test">
-</div>
-
-Let's define liquidity delta
-
-<div>
- <img src="images/maths12.png" alt="Test">
-</div>
-
-Four steps to calculate liquidity delta:
-
-<div>
- <img src="images/maths13.png" alt="Test">
-</div>
-
-<div>
- <img src="images/maths14.png" alt="Test">
-</div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
