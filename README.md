@@ -443,6 +443,24 @@ Four steps to calculate liquidity delta:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Uniswap V3 - How many tokens to add
+
+Let's see a real example of how to calculate the amount of tokens needed when we add liquidity to Uniswap V3
+
+How much USDC will we need to add with the following parameters?
+
+<div>
+ <img src="images/maths15.png" alt="Test">
+</div>
+
+How do we compute delta Y? We'll use the previous equation (Uniswap V3 Liquidity Delta)
+
+<div>
+ <img src="images/maths16.png" alt="Test">
+</div>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Uniswap V3 Add and Remove Liquidity
 
 Manage liquidity in Uniswap V3
