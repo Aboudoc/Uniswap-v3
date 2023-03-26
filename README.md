@@ -77,6 +77,7 @@
         <li><a href="#Function-addLiquidity">Function addLiquidity</a></li>
         <li><a href="#Function-removeLiquidiquiity">Function removeLiquidiquiity</a></li>
       </ul>
+    <li><a href="#Uniswap-V3-Price-of-ETH-from-sqrtPrircex96p">Uniswap V3 Price of ETH from sqrtPrircex96</a></li>
     <li><a href="#Uniswap-V3-Flash-Swap">Uniswap V2 Flash Swap</a></li>
     <ul>
         <li><a href="#State-variables">State variables</a></li>
@@ -460,8 +461,6 @@ How do we compute delta Y? We'll use the previous equation (Uniswap V3 Liquidity
  <img src="images/maths16.png" alt="Test">
 </div>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ### Comparing with user interface
 
 You can access the [uniswap app](https://app.uniswap.org/#/swap) to compare the amount of USDC that we will need to put in when the price of ETH is $1754
@@ -475,6 +474,8 @@ If we compare with the UI, the result is very close
 <div>
  <img src="images/ui.png" alt="Test">
 </div>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Uniswap V3 Add and Remove Liquidity
 
@@ -515,6 +516,44 @@ This function removes liquidity from the Uniswap WETH - DAI pool.
 6. manager.mint returns 4 outputs. Refund tokens not added to liquidity back to msg.sender. We pulled in amount0ToAdd and amount1ToAdd. Actual amount added to Uniswap V3 are amount0 and amount1.
 7. Reset approvals of DAI and WETH for manager to 0
 8. Emit Mint with tokenId.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Uniswap V3 Price of ETH from sqrtPrircex96
+
+<div>
+ <img src="images/maths18.png" alt="Test">
+</div>
+
+What is P?
+
+<div>
+ <img src="images/maths19.png" alt="Test">
+</div>
+
+Price of ETH in terms of USDC
+
+<div>
+ <img src="images/maths20.png" alt="Test">
+</div>
+
+Price of ETH from sqrtPriceX96
+
+<div>
+ <img src="images/maths21.png" alt="Test">
+</div>
+
+Find `sqrtPriceX96` on etherscan
+
+<div>
+ <img src="images/etherscan.png" alt="Test">
+</div>
+
+Example
+
+<div>
+ <img src="images/maths22.png" alt="Test">
+</div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
