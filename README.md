@@ -462,6 +462,20 @@ How do we compute delta Y? We'll use the previous equation (Uniswap V3 Liquidity
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Comparing with user interface
+
+You can access the [uniswap app](https://app.uniswap.org/#/swap) to compare the amount of USDC that we will need to put in when the price of ETH is $1754
+
+<div>
+ <img src="images/maths17.png" alt="Test">
+</div>
+
+If we compare with the UI, the result is very close
+
+<div>
+ <img src="images/ui.png" alt="Test">
+</div>
+
 ## Uniswap V3 Add and Remove Liquidity
 
 Manage liquidity in Uniswap V3
