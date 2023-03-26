@@ -549,7 +549,7 @@ Find `sqrtPriceX96` on etherscan
  <img src="images/etherscan.png" alt="Test">
 </div>
 
-Example
+let's consider `sqrtPriceX96 = 2200755647817846498385002322429664`. The same can be done with the actual sqrtPriceX95
 
 <div>
  <img src="images/maths22.png" alt="Test">
