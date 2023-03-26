@@ -524,28 +524,32 @@ This function removes liquidity from the Uniswap WETH - DAI pool.
 ## Uniswap V3 Price of ETH from sqrtPriceX96
 
 <div>
- <img src="images/maths18.png" alt="Test">
+ <img src="images/math18.png" alt="Test">
 </div>
 
-What is P?
+Let's find out where the 10\*\*12 comes from
+
+First, let's find P through an example
 
 <div>
  <img src="images/maths19.png" alt="Test">
 </div>
 
-Price of ETH in terms of USDC
+But we are interested in the price of ETH in terms of USDC
 
 <div>
- <img src="images/maths20.png" alt="Test">
+ <img src="images/math20.png" alt="Test">
 </div>
 
-Price of ETH from sqrtPriceX96
+But how we calculate the price of ETH starting from sqrtPriceX96?
+
+This is the variable related to the price of tokens, stored in Uniswap V3 contract
 
 <div>
  <img src="images/maths21.png" alt="Test">
 </div>
 
-Find `sqrtPriceX96` on etherscan
+Find `sqrtPriceX96` variable on [Uniswap USDC / ETH pool contract](https://etherscan.io/address/0x8ad599c3A0ff1De082011EFDDc58f1908eb6e6D8#readContract)
 
 <div>
  <img src="images/etherscan.png" alt="Test">
