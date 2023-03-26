@@ -77,7 +77,9 @@
         <li><a href="#Function-addLiquidity">Function addLiquidity</a></li>
         <li><a href="#Function-removeLiquidiquiity">Function removeLiquidiquiity</a></li>
       </ul>
-    <li><a href="#Uniswap-V3-Price-of-ETH-from-sqrtPrircex96p">Uniswap V3 Price of ETH from sqrtPrircex96</a></li>
+    <li><a href="#Uniswap-V3-Price-of-ETH-from-sqrtPriceX96">Uniswap V3 Price of ETH from sqrtPriceX96</a></li>
+    <li><a href="#Uniswap-V3-Tick-and-sqrtPriceX96">Uniswap V3 Tick and sqrtPriceX96</a></li>
+    <li><a href="#Uniswap-V3-Price-Change-from a-Swap">Uniswap V3 Price Change from a Swap</a></li>
     <li><a href="#Uniswap-V3-Flash-Swap">Uniswap V2 Flash Swap</a></li>
     <ul>
         <li><a href="#State-variables">State variables</a></li>
@@ -519,7 +521,7 @@ This function removes liquidity from the Uniswap WETH - DAI pool.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Uniswap V3 Price of ETH from sqrtPrircex96
+## Uniswap V3 Price of ETH from sqrtPriceX96
 
 <div>
  <img src="images/maths18.png" alt="Test">
@@ -549,10 +551,26 @@ Find `sqrtPriceX96` on etherscan
  <img src="images/etherscan.png" alt="Test">
 </div>
 
-let's consider `sqrtPriceX96 = 2200755647817846498385002322429664`. The same can be done with the actual sqrtPriceX95
+Let's consider `sqrtPriceX96 = 2200755647817846498385002322429664`. The same can be done with the actual sqrtPriceX95
 
 <div>
  <img src="images/maths22.png" alt="Test">
+</div>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Uniswap V3 Tick and sqrtPriceX96
+
+<div>
+ <img src="images/mathsxx.png" alt="Test">
+</div>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Uniswap V3 Price Change from a Swap
+
+<div>
+ <img src="images/mathsxy.png" alt="Test">
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
