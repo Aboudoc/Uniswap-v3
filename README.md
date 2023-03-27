@@ -565,8 +565,16 @@ Let's consider `sqrtPriceX96 = 2200755647817846498385002322429664`. The same can
 
 ## Uniswap V3 Tick and sqrtPriceX96
 
+let's see how to convert from `tick` to `sqrtPriceX96` and from `sqrtPriceX96` to `tick`
+
+First, let's start by reviewing some of the variables
+
 <div>
- <img src="images/mathsxx.png" alt="Test">
+ <img src="images/tick00.png" alt="Test">
+</div>
+
+<div>
+ <img src="images/tick01.png" alt="Test">
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
