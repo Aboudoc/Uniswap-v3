@@ -585,10 +585,6 @@ For the first example, we'll say tht we know what the `tick` is and we'll try to
  <img src="images/etherscan.png" alt="Test">
 </div>
 
-<div>
- <img src="images/etherscan.png" alt="Test">
-</div>
-
 Let's use `python` to compute `sqrtPriceX96` and `tick`
 
 Use [python jupyter notebook](https://jupyter.org/try-jupyter/retro/notebooks/)
