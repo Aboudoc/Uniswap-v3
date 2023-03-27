@@ -570,11 +570,52 @@ let's see how to convert from `tick` to `sqrtPriceX96` and from `sqrtPriceX96` t
 First, let's start by reviewing some of the variables
 
 <div>
- <img src="images/tick00.png" alt="Test">
+ <img src="images/tick.png" alt="Test">
 </div>
+
+The last equation is the equation that we're gonna need to calculate from `tick` to `sqrtPriceX96` and from `sqrtPriceX96` back to `tick`
 
 <div>
  <img src="images/tick01.png" alt="Test">
+</div>
+
+For the first example, we'll say tht we know what the `tick` is and we'll try to compute the `sqrtPriceX96`
+
+<div>
+ <img src="images/etherscan.png" alt="Test">
+</div>
+
+<div>
+ <img src="images/etherscan.png" alt="Test">
+</div>
+
+Let's use `python` to compute `sqrtPriceX96` and `tick`
+
+Use [python jupyter notebook](https://jupyter.org/try-jupyter/retro/notebooks/)
+
+```py
+import math
+
+Q96 = 2 ** 96
+
+def tick_to_sqrt_price_x_96(tick):
+    return int(1.0001 ** (tick / 2) * Q96)
+
+def sqrt_price_x_96_to_tick(sqrt_price_x_96):
+    base = math.sqrt(1.0001)
+    p = sqrt_price_x_96 / Q96
+    return math.floor(math.log(p, base))
+
+tick = 204632
+
+tick_to_sqrt_price_x_96(tick)
+
+sqrt_price_x_96 = 1892484952596364096357191768742857
+sqrt_price_x_96_to_tick(sqrt_price_x_96)
+```
+
+<div>
+ <img src="images/tick02.png" alt="Test">
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
