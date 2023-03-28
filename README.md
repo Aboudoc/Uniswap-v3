@@ -724,6 +724,8 @@ Inside the first purple rectangle below, we start by mapping the ticks to this n
  <img src="images/maths32.png" alt="Test">
 </div>
 
+Here is the link to the [ETH / USDC pool](https://info.uniswap.org/#/pools/0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640) on Uniswap v3
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Test Flash Swap
