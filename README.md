@@ -659,6 +659,41 @@ Finally, let's derive the equations for sqrt(P1) and sqrt(P2)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Uniswap V3 Liquidity Price Graph
+
+Let's see how to read liquidity price graph
+
+The current liquidity on Uniswap v3 is L and we are trading on the curve XY = L2
+
+There is a single position supporting this liquidity from the price range [Pa - Pb]
+
+From Pa, Pb and the current price P, let's convert to ticks (equations inside the square) and let's map it horizontally.
+
+The vertical axis represents liquidity
+
+=> To the left of the current tick t, all the tokens will be in token 1 (Y)
+=> To the right of the current tick t, all the tokens will be in token 0 (X)
+
+<div>
+ <img src="images/maths29.png" alt="Test">
+</div>
+
+Let's see why this is:
+
+<div>
+ <img src="images/maths30.png" alt="Test">
+</div>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Uniswap V3 Liquidity Price Graph Example
+
+<div>
+ <img src="images/mathsyy.png" alt="Test">
+</div>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Test Flash Swap
 
 ```sh
