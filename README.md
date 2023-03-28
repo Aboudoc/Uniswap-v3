@@ -695,12 +695,25 @@ Let's see why this is:
 
 ## Uniswap V3 Liquidity Price Graph Example
 
+In the following Liquidity Price Graph of the ETH / USDC pool, in pink you can see the current price
+
+To the left of the current price all of the tokens are in USDC
+
+And to the right of the current price, all of the liquidity are in ETH
+
 <div>
  <img src="images/liquidityGraph.png" alt="Test">
 </div>
 
+Let's see why
+
+Notice that in the graph below:
+
+- X is on the left and Y is on the right
+- ticks are negative
+
 <div>
- <img src="images/mathsyy.png" alt="Test">
+ <img src="images/maths31.png" alt="Test">
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
