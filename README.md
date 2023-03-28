@@ -672,6 +672,7 @@ From `Pa`, `Pb` and the current price `P`, let's convert to `ticks` (equations i
 The vertical axis represents liquidity
 
 => To the left of the current tick `t`, all the tokens will be in token 1 (`Y`)
+
 => To the right of the current tick `t`, all the tokens will be in token 0 (`X`)
 
 <div>
