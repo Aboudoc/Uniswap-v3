@@ -102,7 +102,7 @@
 
 ## About The Project
 
-This project shows how to interact with the main functions of Uniswap V2
+This project shows how to interact with the main functions of Uniswap V3 and derive the main equations used
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
