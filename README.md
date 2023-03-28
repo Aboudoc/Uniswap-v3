@@ -622,7 +622,7 @@ sqrt_price_x_96_to_tick(sqrt_price_x_96)
  <img src="images/maths23.png" alt="Test">
 </div>
 
-First, let's explain what we mean by "we are assuming there is enough liquidity to swap on the curve
+First, let's explain what we mean by "we are assuming there is enough liquidity to swap on the curve"
 
 <div>
  <img src="images/maths24.png" alt="Test">
