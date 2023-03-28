@@ -716,6 +716,14 @@ Notice that in the graph below:
  <img src="images/maths31.png" alt="Test">
 </div>
 
+Instead of P increasing to the right, we want to convert this into a graph where 1 / P increases to the right
+
+Inside the first square below, we start by mapping the ticks to this new graph (we flip the inequality before mapping into the graph), then we convert 1 / P to ticks inside the second square
+
+<div>
+ <img src="images/maths32.png" alt="Test">
+</div>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Test Flash Swap
