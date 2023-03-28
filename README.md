@@ -685,9 +685,19 @@ Let's see why this is:
  <img src="images/maths30.png" alt="Test">
 </div>
 
+**When the current price is equal to Pb, then the liquidity is fully in token Y**
+
+**When the price P is equal to Pa, then the liquidity is fully in token X**
+
+**=> Combinng these two observations, we know that liquidity is in Y for the left of the current tick t, and liquidity is X for the right of t**
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Uniswap V3 Liquidity Price Graph Example
+
+<div>
+ <img src="images/liquidityGraph.png" alt="Test">
+</div>
 
 <div>
  <img src="images/mathsyy.png" alt="Test">
