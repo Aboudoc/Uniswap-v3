@@ -573,7 +573,7 @@ First, let's start by reviewing some of the variables
  <img src="images/tick.png" alt="Test">
 </div>
 
-The last equation is the equation that we're gonna need to calculate from `tick` to `sqrtPriceX96` and from `sqrtPriceX96` back to `tick`
+We're gonna need these two equations to calculate from `tick` to `sqrtPriceX96` and from `sqrtPriceX96` back to `tick`
 
 <div>
  <img src="images/tick01.png" alt="Test">
@@ -619,7 +619,42 @@ sqrt_price_x_96_to_tick(sqrt_price_x_96)
 ## Uniswap V3 Price Change from a Swap
 
 <div>
- <img src="images/mathsxy.png" alt="Test">
+ <img src="images/maths23.png" alt="Test">
+</div>
+
+First, let's explain what we mean by "we are assuming there is enough liquidity to swap on the curve
+
+<div>
+ <img src="images/maths24.png" alt="Test">
+</div>
+
+- Liquidity is only supported between the price range `Pa` and `Pb`, and the price after the swap falls outside of the price range range
+- In the second case, the price P1 after the swap remains in the range `Pa` and `Pb`
+
+Let's go over the math, let's derive the equations
+
+<div>
+ <img src="images/maths25.png" alt="Test">
+</div>
+
+=> These equations can be applied to Y0, Y1, X0 and X1 since all of these points are on the curve XY = L2
+
+This is a important fact to remember as we will derive the equations for delta x and delta y
+
+<div>
+ <img src="images/maths26.png" alt="Test">
+</div>
+
+We'll do the same trick to find delta y
+
+<div>
+ <img src="images/maths27.png" alt="Test">
+</div>
+
+Finally, let's derive the equations for sqrt(P1) and sqrt(P2)
+
+<div>
+ <img src="images/maths28.png" alt="Test">
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
