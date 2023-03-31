@@ -796,27 +796,16 @@ interface IUniswapV3Pool {
 
 ```
 
-`amount0Out`: Amount of token0 to withdraw from the pool => 0
-
-`amount1Out`:Amount of token1 to withdraw from the pool => wethAmount
-
-`to`: Recipient of tokens in the pool => address(this)
-
-`data`: Data to send to uniswapV2Call => data
-
 ### Function uniswapV3FlashCallback
 
-This function is called by the DAI/WETH pair contract after we called pair.swap.
+This is the function called by pool, after we call pool.flash.
 
-Immediately before the pool calls this function, the amount of tokens that we requested to borrow is sent. Inside this function, we write our custom code and then repay the borrowed amount plus some fees.
+Here we have the requested borrow amount of WETH. Our custom code logic goes here. In this case, we will simply repay the borrowed amount plus fee.
 
-1. Require that `msg.sender` is pair. Only pair contract should be able to call this function.
-2. Require `sender` is this contract. Initiator of the flash swap should be this contract.
-3. Decode `data`. Inside flashSwap we've encoded WETH and msg.sender.
-4. Once the data is decoded, we would write our custom code here (arbitrage). We only emitted events for this example
-5. Calculate total amount to repay
-6. Transfer fee amount of WETH from caller (about 0.3% fee, +1 to round up)
-7. Repay WETH to pair, amount borrowed plus fee
+1. Require that msg.sender is the pool.
+2. Decode the data into FlashData
+3. Caller stored in FlashData will pay for the fee on borrow. Transfer WETH from decoded.caller into this contract for the amount fee1.
+4. Repay WETH back to the pool. Transfer borrowed amount + fee1.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
