@@ -758,18 +758,24 @@ Tokens in the pool can be borrowed as long as they are repaid in the same transa
 
 This is called **flash swap**.
 
-The contract inherit from `IUniswapV2Callee`
+Borrow tokens from Uniswap V3 pool and then repay with fee in a single transaction. This is called flash loan.
+
+We'll call `flash` on Uniswap V3 pool to borrow WETH.
 
 ### State Variables
 
 1. Address of tokens and the address of the factory
-2. Set WETH and factory interface then declare pair (IUniswapV2Pair)
+2. Set WETH interface and declare pool (IUniswapV3Pool)
+3. Set `POOL_FEE`to 3000 because we'll call DAI / WETH pool with 0.3% fee
+4. Declare struct `FlashData` with `wethAmount`and `caller`
 
 ### Constructor
 
-1. Call getPair() on factory and store the result inside pair variable (which is a IUniswapV2Pair interface)
+1. The variable pool is immutable, so initialize it inside the constructor.
+2. Address of the pool can be obtained by calling `PoolAddress.computeAddress`.
+3. PoolKey can be obtained by calling `PoolAddress.getPoolKey`
 
-### Function flashSwap
+### Function flash
 
 1. Prepare data of bytes to send. This can be any data, as long as it is not empty Uniswap will trigger a flash swap. For this example, we encode WETH and msg.sender.
 2. Call `swap()`on pair. Find below `swap()` from `IUniswapV2Pair`
@@ -792,7 +798,7 @@ function swap(
 
 `data`: Data to send to uniswapV2Call => data
 
-### Function uniswapV2Call
+### Function uniswapV3FlashCallback
 
 This function is called by the DAI/WETH pair contract after we called pair.swap.
 
