@@ -754,11 +754,7 @@ npx hardhat test test/flashSwapArbV3.test.js
 
 ## Uniswap V3 Flash Swap
 
-Tokens in the pool can be borrowed as long as they are repaid in the same transaction plus fee on borrow.
-
-This is called **flash swap**.
-
-Borrow tokens from Uniswap V3 pool and then repay with fee in a single transaction. This is called flash loan.
+Borrow tokens from Uniswap V3 pool and then repay with fee in a single transaction. This is called **flash loan**.
 
 We'll call `flash` on Uniswap V3 pool to borrow WETH.
 
@@ -766,8 +762,8 @@ We'll call `flash` on Uniswap V3 pool to borrow WETH.
 
 1. Address of tokens and the address of the factory
 2. Set WETH interface and declare pool (IUniswapV3Pool)
-3. Set `POOL_FEE`to 3000 because we'll call DAI / WETH pool with 0.3% fee
-4. Declare struct `FlashData` with `wethAmount`and `caller`
+3. Set `POOL_FEE` to 3000 because we'll call DAI / WETH pool with 0.3% fee
+4. Declare struct `FlashData` with `wethAmount` and `caller`
 
 ### Constructor
 
@@ -781,12 +777,14 @@ We'll call `flash` on Uniswap V3 pool to borrow WETH.
 2. Call `swap()`on pair. Find below `swap()` from `IUniswapV2Pair`
 
 ```js
-function swap(
-   uint amount0Out,
-   uint amount1Out,
-   address to,
-   bytes calldata data
-) external;
+interface IUniswapV3Pool {
+    function flash(
+        address recipient,
+        uint amount0,
+        uint amount1,
+        bytes calldata data
+    ) external;
+}
 
 ```
 
