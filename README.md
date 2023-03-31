@@ -773,8 +773,16 @@ We'll call `flash` on Uniswap V3 pool to borrow WETH.
 
 ### Function flash
 
-1. Prepare data of bytes to send. This can be any data, as long as it is not empty Uniswap will trigger a flash swap. For this example, we encode WETH and msg.sender.
-2. Call `swap()`on pair. Find below `swap()` from `IUniswapV2Pair`
+This function will initialize the flash loan on Uniswap V3 pool by calling `pool.flash`
+
+Below is an overview of what will happen after pool.flash is called.
+
+- The pool sends tokens to the borrower.
+- The pool calls uniswapV3FlashCallback on the borrower.
+- Inside the uniswapV3FlashCallback our customm code is executed. At the end of the code, we must pay back the borrowed amount plus fees.
+
+1. Prepare data to be passed to `pool.flash`. Any bytes can be passed, but we will encode our custom struct `FlashData`.
+2. Call `pool.flash`
 
 ```js
 interface IUniswapV3Pool {
@@ -862,8 +870,10 @@ You can find official Uniswap documentation below:
 
 - [-] Uniswap V3 TWAP
 - [-] Further reading
-- [ ] Deploy script
 - [-] Unit test
+- [ ] Flash Swap
+- [ ] Flash Swap test
+- [ ] Deploy script
 
 See the [open issues](https://github.com/Aboudoc/Uniswap-v3.git/issues) for a full list of proposed features (and known issues).
 
