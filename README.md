@@ -82,7 +82,7 @@
     <li><a href="#Uniswap-V3-Price-Change-from-a-Swap">Uniswap V3 Price Change from a Swap</a></li>
     <li><a href="#Uniswap-V3-Liquidity-Price-Graph">Uniswap V3 Liquidity Price Graph</a></li>
     <li><a href="#Uniswap-V3-Liquidity-Price-Graph-Example">Uniswap V3 Liquidity Price Graph Example</a></li>
-    <li><a href="#Uniswap-V3-Flash-Swap">Uniswap V2 Flash Swap</a></li>
+    <li><a href="#Uniswap-V3-Flash-Swap">Uniswap V3 Flash Swap</a></li>
     <ul>
         <li><a href="#State-variables">State variables</a></li>
         <li><a href="#Constructor">Constructor</a></li>
