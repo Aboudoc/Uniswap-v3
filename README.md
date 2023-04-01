@@ -867,9 +867,11 @@ You can find official Uniswap documentation below:
 - [-] Uniswap V3 TWAP
 - [-] Further reading
 - [-] Unit test
-- [ ] Flash Swap
+- [-] Flash Swap
 - [ ] Flash Swap test
-- [ ] Deploy script
+- [ ] Uniswap V3 Capital Efficiency (maths)
+- [ ] Uniswap V3 Just In Time Liquidity (maths)
+- [ ] Deploy on mainnet
 
 See the [open issues](https://github.com/Aboudoc/Uniswap-v3.git/issues) for a full list of proposed features (and known issues).
 
