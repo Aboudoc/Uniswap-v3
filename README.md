@@ -207,6 +207,8 @@ This contract introduces 2 functions to perform single hop swaps on Uniswap V3
 `exactInputSingle` - Sell all of input token.
 `exactOutputSingle` - Buy specific amount of output token.
 
+We are interacting with the interface for Uniswap V3 router `ISwapRouter`
+
 ### State variables
 
 1. Address of tokens (2 or 3) and the address of the router
@@ -231,6 +233,11 @@ This contract introduces 2 functions to perform single hop swaps on Uniswap V3
 ## Uniswap V3 Multi Hop Swap
 
 Swap WETH for USDC and then USDC for DAI.
+
+`exactInput` - Sell all of input token.
+`exactOutput` - Buy specific amount of output token.
+
+We are interacting with the interface for Uniswap V3 router `ISwapRouter`
 
 ### State variables
 
