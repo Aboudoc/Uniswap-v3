@@ -884,7 +884,7 @@ Whereas in the same price range, Justin provided liquidity as shown in the red a
 
 **This means that when a trade executes in this price range, Justin will earn the majority of the fees (after Bob's trade is processed)**
 
-Note that the price change from `P0` to `P*1` is less than the change from `P0` to `P1``
+Note that the price change from `P0` to `P*1` is less than the change from `P0` to `P1`
 
 This is beause there is a lot of liquidity arount the current price range in the second case => the price moves very little, this is called just-in-time liquidity
 
