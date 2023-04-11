@@ -854,13 +854,35 @@ Next, let's replace the current price `P` with another number
 
 ## Uniswap V3 Just In Time Liquidity
 
-<div>
- <img src="images/mathsz.png" alt="Test">
-</div>
+`Alice` is a liquidity provider and `Bob` swaps tokens.
+
+From this trade, Alice earns some fees :)
+
+This is how normally how a liquidity provider will earn some fees
 
 <div>
- <img src="images/mathsa.png" alt="Test">
+ <img src="images/maths36.png" alt="Test">
 </div>
+
+Let's see how just in time liquidity will change how the liquidity providers earn fees
+
+In this case, `Justin` sees Bob's transaction in `mempool` and front-runs Bob
+
+<div>
+ <img src="images/maths37.png" alt="Test">
+</div>
+
+In the example above we assume that Justin has a lot of liquidity in a narrow price range including the current (shown in red)
+
+Close to the current price `P0`, Aloce has provided liquidity as shown in the green area
+
+Whereas in the same price range, Justin provided liquidity as shown in the red area, a lot more than Alice
+
+**This means that when a trade executes in this price range, Justin will earn the majority of the fees (after Bob's trade is processed)**
+
+Note that the price change from `P0` to `P*1` is less than the change from `P0` to `P1``
+
+This is beause there is a lot of liquidity arount the current price range in the second case => the price moves very little, this is called just-in-time liquidity
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
