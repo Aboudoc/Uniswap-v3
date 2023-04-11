@@ -864,7 +864,7 @@ This is how normally how a liquidity provider will earn some fees
  <img src="images/maths36.png" alt="Test">
 </div>
 
-Let's see how just in time liquidity will change how the liquidity providers earn fees
+Let's see how `just-in-time` liquidity will change how the liquidity providers earn fees
 
 <div>
  <img src="images/maths36bis.png" alt="Test">
