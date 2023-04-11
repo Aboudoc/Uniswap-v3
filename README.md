@@ -825,7 +825,7 @@ If we were to add the same amount of tokens to `Uniswap v2` and `Uniswap v3`, th
 Let's start with these equations from **_Liquidity Delta_** section to derive the capital efficiency equation
 
 <div>
- <img src="images/maths33.png" alt="Test">
+ <img src="images/math33.png" alt="Test">
 </div>
 
 As an example, we calculated the capital efficiency if we were to provide liquidity +/- `2%` of the current price `P`
