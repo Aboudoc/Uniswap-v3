@@ -88,6 +88,8 @@
         <li><a href="#Constructor">Constructor</a></li>
         <li><a href="#Function-flashSwap">Function flashSwap</a></li>
       </ul>
+    <li><a href="#Uniswap-V3-Capital-Efficiency">Uniswap V3 Capital Efficiency</a></li>
+    <li><a href="#Uniswap-V3-Just-In-Time-Liquidity">Uniswap V3 Just In Time Liquidity</a></li>
     <li><a href="#Forking-mainnet">Forking mainnet</a></li>
     <li><a href="#Note">Note</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -813,6 +815,52 @@ Here we have the requested borrow amount of WETH. Our custom code logic goes her
 2. Decode the data into FlashData
 3. Caller stored in FlashData will pay for the fee on borrow. Transfer WETH from decoded.caller into this contract for the amount fee1.
 4. Repay WETH back to the pool. Transfer borrowed amount + fee1.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Uniswap V3 Capital Efficiency
+
+If we were to add the same amount of tokens to `Uniswap v2` and `Uniswap v3`, then how much more can we increase the liquidity in Uniswap v3 if we were to narrow the price range?
+
+Let's start with these equations from **_Liquidity Delta_** section to derive the capital efficiency equation
+
+<div>
+ <img src="images/maths33.png" alt="Test">
+</div>
+
+As an example, we calculated the capital efficiency if we were to provide liquidity +/- `2%` of the current price `P`
+
+In other words, if we were to provide the same amount of token to Uniswap v2 and Uniswap v3, the amount of tokens are `deltaX` and `deltaY`
+
+However, in Uniswap v3, let's say that we provide the liquidity for the price range +/- 2% of the current price, then the liquidity in Uniswap v3 is about **100 times greater than in Uniswap v2**.
+
+<div>
+ <img src="images/maths34.png" alt="Test">
+</div>
+
+We calculated the ratio of liquidity delta for Uniswap v2 and for Uniswap v3
+
+Next, let's replace the current price `P` with another number
+
+- We're going to say that the current price `P` is the geometric mean of `Pa` and `Pb`
+- We take the equation highlighted previously in green
+- We replace the `sqrtP` highlighted below by the geometric mean of Pa and Pb (`sqrt(PaPb)`)
+
+<div>
+ <img src="images/maths35.png" alt="Test">
+</div>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Uniswap V3 Just In Time Liquidity
+
+<div>
+ <img src="images/mathsz.png" alt="Test">
+</div>
+
+<div>
+ <img src="images/mathsa.png" alt="Test">
+</div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
