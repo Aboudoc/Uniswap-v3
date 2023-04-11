@@ -866,6 +866,10 @@ This is how normally how a liquidity provider will earn some fees
 
 Let's see how just in time liquidity will change how the liquidity providers earn fees
 
+<div>
+ <img src="images/maths36bis.png" alt="Test">
+</div>
+
 In this case, `Justin` sees Bob's transaction in `mempool` and front-runs Bob
 
 <div>
