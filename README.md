@@ -882,7 +882,7 @@ Close to the current price `P0`, Aloce has provided liquidity as shown in the gr
 
 Whereas in the same price range, Justin provided liquidity as shown in the red area, a lot more than Alice
 
-**This means that when a trade executes in this price range, Justin will earn the majority of the fees (after Bob's trade is processed)**
+**This means that when a trade executes in this price range, Justin will earn the majority of the fees** (after Bob's trade is processed)
 
 Note that the price change from `P0` to `P*1` is less than the change from `P0` to `P1`
 
